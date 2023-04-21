@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+
+    <section id="definitions">
+        <h2>Definitions</h2>
+        <p>
+            <blockquote>
+                Javascript is the language of the web. [...] Different browsers
+                have different JavaScript interpreters which execute JavaScript code. [1]
+            </blockquote>
+            <hr>
+        </p>
+        <p>
+            <blockquote>
+                JavaScript is a scripting languange that is one of the 
+                three core languages used to develop websites. Whereas
+                HTML and CSS give a website strucure and style, Javascript
+                lets you add functionality and behaviors to your website,
+                allowing your website's visitors to interact with content 
+                in many imaginative ways.
+                <br>
+                JavaScript is primarily a client-side language, meaning
+                it runs on your computer within your browser. However,
+                more recently the introduction of Node.js has allowed
+                JavaScript to also execute code on servers. [2]
+            </blockquote>
+            <hr>
+        </p>
+        
+    </section>
+
+    <section id="facts">
+        <h2>Facts</h2>
+        <ul>
+            <li>
+                Javascript <a href="../programming_concepts/index.html#specification"><strong>specifications</strong></a>
+                are indicated by <strong>ES</strong> and a number (e.g. ES6). 
+                ES stands for ECMAScript, where ECMA is the European Computer Manufacturers Association.
+            </li>
+        </ul>
+    </section>
+
+    <section id="classes">
+        <h2>Classes</h2>
+        You may often find online that classes have been implemented in 
+        JavaScript starting from ES6, however class definition has <em>always</em>
+        been allowed in JavaScript, but ES6 introduced a new, more convenient,
+        syntax using the <code>class</code> keyword.<br>
+        Here I list the main things to remember about classes:
+        <ul>
+            <li>
+                Classes are defined in this way: <code>class ClassName {}</code>. 
+                In JavaScript classes start with capital letters (like in python) and 
+                the curly braces contain the body of the class declaration;
+            </li>
+            <li>
+                Classes are initialized with the <code>constructor</code>
+                method (<code>constructor(args) {}</code>). Inside the constructor,
+                class properties are referred using the word <code>this</code> (
+                <code>this.attr1 = 1;</code>). Recently, a new syntax has 
+                been approved, you can write the properties (or <em>fields</em>)
+                of the class at the beginning of the class body simply
+                listing the name of the fields and their value (<code>attr1 = 1;</code>).
+                Using this latter syntax you can also define variable that
+                are accessible only inside the classe: <code>#attr = 1</code>.
+                Remember that in both syntaxes, not variable declaration is 
+                necessary.<br> 
+                The constractor function is equivalent to __init__() in python;
+            </li>
+            <li>
+                Methods are defined in this way: <code>methodName(args) {}</code>. 
+                Contrary to python (where underscored are uside in function 
+                names), in Javascript the name convetion for methods (and 
+                functions in general) is words separated by capital letters;
+            </li>
+            <li>
+                Inheritance is achieved with the word <code>extends</code>:
+                <code>class ClassName extends ParentClass {}</code>. In order
+                to inherit all the properties of the parent classe, you need
+                to use <code>super()</code> in the constructor of the child
+                class;
+            </li>
+            <li>
+                Static (or class) methods are methods invoked on the class constructor, 
+                while standard methods are invoked on a class instance. In 
+                order to define standard static methods you simply need
+                to use the prefix <code>static</code> before the method;
+            </li>
+            <li>
+                !!! When you define functions in javascript, that piece
+                of code is executed at the beginning of your script. Even 
+                if the class declaration looks similar to the function 
+                declaration, this is not true for classes, so classes 
+                must be defined before being used.
+            </li>
+        </ul>
+
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <ol>
+            <li><em>Fullstack React</em>, Anthony Accomazzo et al.</li>
+            <li><a href="https://www.springboard.com/blog/data-science/history-of-javascript/#:~:text=The%20name%20JavaScript%20came%20from,compiled%20into%20an%20executable%20form.">Springboard blog on history of JavaScript</a></li>
+            <li><em>Javascript the Definitive Guide</em>, Flanagan</li>
+        </ol>
+    </section>
+</body>
+</html>

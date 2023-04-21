@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <h1>React</h1>
+    
+    <section id="definitions">
+        <h2>Definitions</h2>
+        <p>
+            <blockquote>
+                React is another solution for <a href="../programming_concepts/index.html#singlePageApplication">SPAs</a>, it was released
+                by Facebook later in 2013. As Angular (Google), Ember, Knockout, 
+                and Backbone, React is used to create entire web applications
+                in JavaScript [2].
+            </blockquote>
+        </p>
+    </section>
+
+    <section id="setup">
+        <h2>React project Set-Up</h2>
+        <div id="step1">
+            <h3>Step1: creating your React environment</h3>
+            <p>
+                <code>npx create-react-app your_react_project</code>
+            </p>
+            or
+            <p>
+                <code>npm init react-app your_react_project</code>
+            </p>
+            <p>
+            <strong>npx</strong> stands for node package executor. You can 
+            find more information about <code>create-react-app</code> <a href="https://github.com/facebook/create-react-app">here</a>. 
+            The previous command will create a folder with the name of your app.
+            Inside the folder there are a series of sub-folders and files
+            containing all you need to start your React project. In particular:
+            <ul>
+                <li>
+                    A <strong>README.md</strong> markdown file. This is 
+                    supposed to briefly describe your project (GitHub style);
+                </li>
+                <li>
+                    <strong>package.json</strong>, a file containing a list
+                    of node package dependencies and oteher project configurations.
+                    Going through your package.json file, you will also find the 
+                    list of scripts you can use under the <em>scripts</em>
+                    property;
+                </li>
+                <li>
+                    <strong>public</strong>, a directory holding all our
+                    development files, including the <em>public/index.html</em>
+                    file (the single page of our SPA) and the sub-directory 
+                    <em>src/</em> containing all the JavaScript code. In 
+                    particular the <em>src/App.js</em> file is used to 
+                    implement <strong>React components</strong>. Of course, 
+                    this is the setup configuration, as you are going to
+                    develop your project you may want to organize your 
+                    components into different files;
+                </li>
+            </ul>
+            <code>create-react-app</code> will also configure tools such 
+            us webpack and Babel, so that you do not need to worry about those.
+            </p>
+        </div>
+
+        <div id="step2">
+            <h3>Step2: Start the app in developer mode</h3>
+            <p>
+                <code>npm start</code>
+            </p>
+        </div>
+        <div id="step3">
+            <h3>Step3: Run the tests</h3>
+            <p>
+                <code>npm test</code>
+            </p>
+        </div>
+        <div id="step4">
+            <h3>Step4: Build the aoo for production</h3>
+            <p>
+                <code>npm run build</code>
+            </p>
+            <p>
+                This command will create a <em>build</em> directory that 
+                can be used to deploy your application;
+            </p>
+        </div>
+    </section>
+
+    <section id="aboutJSX">
+        <h2>About JSX</h2>
+        <p>
+            JSX is a syntax extension to JavaScript. It is not mandatory 
+            to use JSX in order to use React (as it is not mandatory to use 
+            React to implement SPA), but it makes life a lot easier.
+        </p>
+        <p>
+            <h3>JSX main features:</h3>
+            <ul>
+                <li>
+                    JavaScript variables (variables that have been declared
+                    at a certain point either using const or let) can be 
+                    used inside JSX wrapping them around curly braces (e.g. {my_variable}).
+                    You can actually put entire Javascript expressions inside 
+                    curly braces;
+                </li>
+                <li>JSX expressions can be used inside conditaional statements,
+                    for loops, assigned to variables, accepted as arguments,
+                    and returned by functions. This is all because JSX statements
+                    are translatedinto JavaScript during compilation;
+                </li>
+                <li>
+                    In JSX object properties use the camelCase convention,
+                    the same of JavaScript functions. So that HTML class and 
+                    tabindex become className and tabIndex in JSX;
+                </li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="tips">
+        <h2>Practical tips</h2>
+        <p>
+            <h3>From my very first coding of mdn example in codepen</h3>
+            <ul>
+                <li>Remember to declare all the variable either with let or const;</li>
+                <li>It's ReactDOM not ReactDom;</li>
+                <li>
+                    Do you want to place a React component inside an html element? Then:
+                    <ul>
+                        <li>Give that element a unique ID (myid);</li>
+                        <li>
+                            Create a React root for the supplied container
+                            using <code>root = ReactDOM.createRoot(document.getElementById('myid'));</code>;
+                        </li>
+                        <li>
+                            Use the just created root to render the react 
+                            element using <code>root.render(&#60 MyReactElement args={whatever} /&#62)</code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    !!! When you create a list of elements, you should give
+                    to each element a unique ID, so that React can identify
+                    which item changed.
+                </li>
+            </ul>
+        </p>
+
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <ol>
+            <li><em>Fullstack React</em>, Anthony Accomazzo et al.</li>
+            <li><em>The road to React</em>, Robin Wieruch</li>
+            <li>https://reactjs.org/docs/</li>
+        </ol>
+    </section>
+</body>
+</html>

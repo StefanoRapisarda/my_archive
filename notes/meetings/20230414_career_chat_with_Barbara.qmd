@@ -1,0 +1,64 @@
+---
+title: "Meeting with Barbara Vreede on career perspective"
+format: html
+theme: sketchy
+toc: true
+toc_depth: 2
+editor: visual
+author: Stefano Rapisarda
+participants: Stefano Rapisarda, Barbara Vreede
+topic: Introduction, Working at the library, Working at the eScience Center
+keywords: None
+date: 2023-04-14
+---
+
+## Motivation
+
+Following the R course of the eScience Center I found out that his organiser worked
+at the library. I was curious about the history of this person and what brought 
+her to the eScience center;
+
+## What we discussed
+
+- Barbara's background is in biology, she started at the library as an **information
+specialist** for the beta faculties. It seems she was particularly skilled (or anyway,
+more skilled than the rest of the people) in programming and she collaborated a lot
+with Jonathan. Together they set up several programming courses still existing at
+the library. This, according to her, was done in a time software packages were not
+yet considered something to included into the published material;
+- About her current duties at the eScience Center, she mentioned she works on project hours.
+The eScience Center assigns a certain number of professional developping hours to projects,
+including workshops, and it seems they are quite strict and the hourse you spend
+on a certain project. She also mentioned that she mainly works on "small" projects,
+i.e., for example, a messy program that needs to be turned into a publishable package.
+In this context, her experience at the library was very valuable as she was very familiar
+with licenses, testing, packaging, and all the topics related to the publication of
+software, with much more expertise than her, people with a PhD in computer science and 
+so on, this can be stressfull, but it also would give you the opportunity to learn a lot. 
+She did not consider the UU research engineering team because of personal reasons 
+and because about research software the eScience Center is the center of excellence
+in the Netherlands;
+- A nice thing she pointed out is that it is nice having in your CV a job at the library,
+she said that if you were coming from the research engineer group, for example, you
+would be just a "programming monkey", while a job at the library allows you to get
+a reacher and more diverse set of experiences;
+- About working with her colleagues, she mentioned that in the eScience Center
+environment she is the "last arrived", there are a lot of people 
+- About the atmosphere at the library, she mentioned she misses a lot the **freedom**
+she had there, but that at her time they were quite strict with the dressing code (while,
+for example, she liked to go around in flip flops and so on). She is clearly a research
+geek and she mentioned that she likes a lot the atmosphere at the eScience Center as
+everybody is a Geek;
+- She suggested to take advantage as much as I can of the freedom that the library offer,
+do not wait (I am adding by my own to her suggestion) to be assigned to tasks but 
+think about your own projects to propose;
+
+## Meeting outcome(s)
+
+- I must treasure the discussion about the freedom offered at the library and 
+trying to get the most I can from such freedom as it would probably never happen
+in another job;
+- I should check the eScience Center fellowship program.
+
+### TODO:
+- [ ] Eventually apply for the eScience Center fellowship <a url="https://www.esciencecenter.nl/fellowship-programme/"> here </a>;

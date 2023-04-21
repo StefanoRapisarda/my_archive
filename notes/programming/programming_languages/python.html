@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Python</h1>
+
+    <section id="ProgRec">
+        <h2>Programming Recommendations</h2>
+
+        <p>
+            From <a href="https://peps.python.org/pep-0008/#programming-recommendations">PEP8</a>
+            <ul>
+                <li>
+                    !!! comparison with <code>None</code> should always be done with
+                    <code>is</code> or <code>is not</code>, <strong>never</strong>
+                    with equality operators. Also, always use <code>is not</code>
+                    instead of <code>not is</code> and always use <code>if x is not None</code>
+                    instead of <code>if x</code> when testing whether a variable or 
+                    argument that default to <code>None</code> was set to some
+                    othe value;
+                </li>
+                <li>
+                    Use ''.startswith() and ''.endswith() instead of string 
+                    slicing to check for prefixes ot suffixes;
+                </li>
+                <li>
+                    Object comparisons should always use isinstance();
+                </li>
+            </ul>
+        </p>
+    </section>
+</body>
+</html>

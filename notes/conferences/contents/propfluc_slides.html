@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Propagating Fluctuations Models</h1>
+    <h2>Where are we? Where are we going? Shall we go after all?</h2>
+    
+    <section>
+        <h2>Speech</h2>
+        <ol>
+            <li>
+                <h3>Cover Slide</h3>
+                Good morning everybody. First of all, I would like to 
+                thank Diego and Mariano for having solecited this talk.
+            </li>
+            <li>
+                <h3>Outline</h3>
+                In this half an hour I am going to talk about propagating
+                fluctuations models. I've decided to follow a pedagogigal
+                approach focusing more on concepts instead of the math.
+                I will start setting the general background for our discussion,
+                and then I will introduce both the hypothesis of propagating 
+                fluctuations and its implementation. We will then have a look
+                at some applications of the models on data and finally
+                it will be time to discuss the current state and future 
+                perspectives for this kind of models.
+            </li>
+            <li>
+                <h3>Modelling the variability</h3>
+                What you see in this slide is on the left energy spectra 
+                and on the right power spectra of three accretion states 
+                in black hole x-ray binaries. During a typical outburst 
+                an x-ray binary goes through these states and all kind 
+                intermediate states characterized by, as you can see,
+                specific spectral and timing properties.</br>
+                </br>
+                We believe that each state corresponds to a specific geometry
+                of the accretion and the way we estimate the parameters of 
+                these geometrical configurations is by modelling the available 
+                information, the energy spectrum and the fast variability,
+                that here is represented by the power spectrum.</br>
+                </br>
+                When I started learning about this I always had the fealing 
+                that somehow the modelling of the variability was lagging 
+                behind the modelling of the energy spectrum and I think
+                this is because of a very obvious reason. The emission mechanisms
+                responsible for the observed flux in X-ray binaries were 
+                already well known before the discovery of X-ray binaries.
+                I am talking about black body emission and Compton scattering,
+                of course they had to be adjusted to the environment around
+                compact objects, but still they were there to be used. On the  
+                other hand modelling the variability is a totally different 
+                challenge, because we are dealing with stochastic or random 
+                variations, to the point that one may ask, is it that 
+                important modelling the variability with a physical model? 
+                Well, it is.</br>
+                </br>
+           
+            </li>
+            <li>
+                <h3>Importance of timing modelling</h3>
+                To make my point even more explicit, I always like to show
+                these pictures. On the left you see two energy spectra 
+                from the low hard state of Cygnus X-1 and XTE J1550. As 
+                you can see the energy spectra are very similar to each other,
+                but when you look at the timing properties, they could not 
+                be more different. The first two panels are power spectra 
+                in a soft and hard energy band and the last panel is the 
+                phase lags.<br>
+                <br>
+                My point here is that nowadays any study that has the 
+                ambition to unveil the geometry of accretion around black 
+                holes, and in general compact object, must include 
+                modelling of both spectral and timing information.
+            </li>
+            <li>
+                <h3>What to model?</h3>
+                Ok, so we need a model for the variability, what exactly
+                do we need to model?
+                In this slide you see a typical power spectrum of black 
+                hole X-ray binaries during the hard state. You can 
+                see it is characterzied by both broad band noise, spanning 
+                several decades in frequency, and narrow features that we 
+                identify as QPO. Both these features are energy dependent,
+                with variability at high frequency usually increasing
+                with energy. Both these features have associated time 
+                lags that are also energy dependent and increase with energy.
+                Here there is a less obvious characteristic of the variability,
+                i.e. the linear relation between absolute RMS and flux at 
+                different time scales. Without going to much into details,
+                this tells us that different time scales of variability are 
+                correlated, something it is important to remember for our 
+                later discussion.
+                Finally, of course, all the characteristics evolve during
+                the evolution of an outburst, so our model has also to be
+                able to explain such changes.<br>
+                <br>
+                As you can see this is a quite long list of criteria that
+                our physical model needs to satisfy and I guess you start 
+                to understand why the modelling of the variability lags 
+                behind the spectral modelling. Anyhow, it comes out that
+                there is an hypotheis able to exaplain, at least qualitatively,
+                all these characteristics and, surprise surprise, this is 
+                the hypothesis of propagating fluctuations;
+            </li>
+            <li>
+                <h3>The propagaing fluctuations hypothesis</h3>
+                This hypothesis was first proposed by Lyubarskii in 1997 
+                and I will try to exaplain it with this animation. <br>
+                <br>
+                ...
+                <br>
+                One fundamental concept to understand about these scanario is that,
+                because of this propagating mechanism, somehow the disk keeps
+                memory of the variability generated in it. So that, for example,
+                even if the outher part of the disk is not observable, its
+                characteristic frequencies will be transferred to the inner 
+                part of the disk, where most of the energy is released, so that 
+                emission from this inner part, even if it is phisically
+                very small, will be characterized by variability 
+                with a very broad range of time scales.<br>
+                <br>
+                Other two important assumptions of this scenario that need 
+                to be rememebr are:1) that 
+                the characteristic time scale of the variability increases with radius,
+                so that we have fast fluctuations close to the black hole 
+                and slow fluctuations far from the black hole and 2) That 
+                the emission of the inner disk is harder than the outer disk.
+                This second assumption is fundamental to observe phase 
+                lags between a soft and a hard energy band.
+            </li>
+            <li>
+                <h3>Power Spectrum from fluctuations</h3>
+                In this other animation you can see fluctuations arising 
+                in each ring of this accretion flow, you can see the fluctuations 
+                in the time domain on the left and their power spectrum on the 
+                right. We have slow fluctuations far from the black hole 
+                modulating the faster fluctuations close to the black hole.
+                As you can see the result of this propagating mechanism 
+                is a broad band noise feature.
+            </li>
+            <li>
+                <h3>Power Spectrum from fluctuations2</h3>
+                Here you see another example of power spectra result of 
+                propagating fluctuations in a soft and hard energy bands,
+                as you can notice the hard power spectrum is higher at higher 
+                frequency as we expect the high frequency variability 
+                to be more dominant at high energies, and a natural outcome 
+                of propagating fluctuations model is phase or time lags 
+                between the soft and hard energy band.<br>
+                <br>
+                So basically this propagating fluctuation model can predict 
+                energy dependent broad band variability, hard phase lags, 
+                because propagation is a multiplicative process it also 
+                reproduce the linear RMS-flux relation, what we need is 
+                something to model the narrow band features, the QPO.
+                Propagating fluctuations models of course cannot explain
+                that, but they can be combined with other models. For example
+                assuming a truncated disk geometry where the entire inner 
+                flow precesses because of frame dragging close to the black hole,
+                you can add a QPO signal on top of the broad band noise.
+            </li>
+            <li>
+                <h3>Implementing the model</h3>
+                This all seems a very nice story, but how did I make That
+                power spectrum plots, how did we implement this hypothesis?
+                This propagation mechanism seems very complex to code? Do we need 
+                to use MHD simulations or radiative transfer code?
+                Well it turns out that there are relatively easier ways to 
+                implement this hypothesis.
+            </li>
+            <li>
+                <h3>Implementing the model</h3>
+                The way we implement the model starts dividing the disk,
+                or the accretion flow, into rings or annuli. As we said, 
+                stochastic mass accretion rate fluctuations are 
+                stirred up in each ring, but how to we reproduce stochastic flcutuations.
+                Well, we assume that these fluctuations are the result of 
+                a certain process and that this process can be described by
+                a power spectrum. We choose as power spectrum a zero-cetred 
+                Lorentzian bending at the local viscous frequency (that is 
+                just the frequency associate with the local viscous time scale). 
+                Why this function and not, for example, something 
+                that looks like white noise? Because looking at the 
+                solutions of the diffusion equations 
+                we find out that, when looking far away in the disk,
+                 variations shorter than the local viscous time 
+                scale are heavely dumped, so we use a function that behaves 
+                basically as white noise below the viscous frequency and 
+                then rapidly decade at higher frequencies. There are also 
+                mathematical reasons to choose a zero-centered Lorentzian,
+                but I am not going into details about that.
+                Well, once we choose the fourier power spectrum of our 
+                fluctuations, we need to simulate the stochastic time series
+                from it, a single realization of this process using the 
+                Timmer and Koenig prescription. Mass accretion rate fluctuations
+                in a ring are then converted into flux variability via a weighting factor.
+                Here I indicated it with s to denominate the soft energy band, but 
+                each energy will have its own weighting factor. 
+                then we consider the next ring, the mass accretion rate fluctuations
+                stirred up in the next ring have the same shape of the previous 
+                one (centred Lorentzian), but its bending frequency is higher,
+                as the local viscous frequency is higher. This time, we don't 
+                convert direct these fluctuations in time, but we multiply 
+                them by the fluctuations of the previous ring shifted of 
+                a certain time delay. The time delay is the time that fluctuations 
+                take to propagate from the previous ring to the current ring.
+                We repeat this process for all the ring and we obtain in this 
+                way a full lightcurve in several energy bands that we will 
+                use to model our data.
+            </li>
+            <li>
+                <h3>Implementing the model</h3>
+                This randomize-shift-multiply
+                algorithm has two main problems: 1) first, it can be 
+                computationally very intensive and 2)we are still working 
+                with a single realization of the process that we assume. 
+                Luckely for us there is a much more efficient way to obtain 
+                analitically power and cross spectra, so avoiding the multiplication
+                cycles in your program. Michiel van der Klis came out with 
+                this idea in 2012 and then together with Adam they worked 
+                out the math. This is the method that is used in the most 
+                recent works on propagating fluctuations, but I decided to 
+                spend sometime to describe the Timmer and Koenig algorithm 
+                both because it's more intuitive and becuase it is fundamental 
+                to anderstand the Ingram & van der Klis implementation.
+                I am not do go into detail into this implementation, but 
+                I want to highlight a fundamental difference. the Ingram 
+                and van der Klis implementation works mainly in the frequency 
+                domain, this means that if you want to introduce some  kind 
+                of time variability and interacts with the fluctuations in 
+                a non-linear way, this cannot be done using this implementation. 
+            </li>
+            <li>
+                <h3>Implementing the model wrap up</h3>
+                So, to conclude this section about implementing the model,
+                I want just to highlight that, in order to properly implement 
+                that quite simple idea of propagating fluctuations, you 
+                have to make an additional set of assumption related to 
+                the characteristics of these fluctuations. What is their 
+                power spectrum? Do they have a characteristic frequency?
+                Yes the viscous time frequency, then you need to assume 
+                a radial viscou frequency profile, i.e. how the viscous 
+                frequency changes in the disk. How fast do these fluctuations 
+                propagate, and we assume that the viscous time scale also 
+                sets the time the fluctuations need to propagate. Then 
+                you neeed to make assumptions about the amplitude of the 
+                fluctuations and also the emissivity. All these assumptions
+                establish the link between the geometry of the accretion flow 
+                and the observed variability.
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability</h3>
+                Well let's talk about these assumptions more in details and 
+                let's see what happens when we compare model predictions 
+                to data.
+                In this slide you see a schematic view of a accretion geometry 
+                that we assumed in our work in 2016 and 2017. We assumed a truncated 
+                disc geometry, where a optically thick geometrically thin accretion 
+                disk is truncated at a certain our radius. Inside this radius,
+                accretion takes place via a geometrically thick optically thin 
+                accretion flow. We assumed mass accretion rate fluctuations 
+                propagating both in the disk and in the flow, but as you 
+                can see from this sketch, we assumme only the inner part 
+                of the disk to be variable. The green line is the viscous
+                frequency profile, what sets both characteristic time scale 
+                and propagation time of the fluctuations. In the disk 
+                it simply comes from Shakura-Sunyaev solutions, while 
+                in the hot flow it's assume to be a power law. The dashed 
+                purple line rapresents the amplitude of the fluctuations.
+                In the flow is constant per radial decade, while in the disk 
+                we assume it to be a Gaussian peaking at the truncation radius.
+            </li>
+
+            <li>
+                <h3>Modelling BH-XRB variability case1</h3>
+                Every time you have a new shining model, there is always
+                the tendency to select that single observation that match 
+                almost all your model predictions. With Adam and Michiel 
+                in 2017 we decided to do something different, I explored 
+                all RXTE archive of many sources and I selected two 
+                cases of study according to the signal to noise and to 
+                how badly the model was going to fit the data.
+                Here you see the first case, the source is XTE J1550 during 
+                the rise of its ourburst in September 1998, so we are in the 
+                low hard state and the power spectrum consist of a broad band 
+                component with a beutiful narrow QPO and second harmonic 
+                on top of it. Data are in black, model predictions are in 
+                red. The upper plots are power spectra in a soft and hard 
+                energy band, while on the bottom left we have the cross-spectrum 
+                and on the bottom right the phase lags. 
+                All this information was fitted simultaneously, and that
+                is what you should always do with propagating fluctuations 
+                model predictions. It does not make much sense to fit 
+                just the power spectrum, you need to fit the power and 
+                the phase lags in at least two energy bands.
+                As you may notice, the model well reproduce the shape of 
+                the power, but it underestimate the magnitude of the lags.
+                Let's go a bit deeper into the implications of this descrepancy.
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability case 1: problems</h3>
+                Let's go back to our model assumption. We have a propagating 
+                region where the viscous frequency decreases with radius,
+                so fast variability happens close to the black hole and 
+                slow variability far from the black hole. We also assumed 
+                that the spectrum of rings close to the black hole is harder,
+                so soft photons come mainly from the outer region of the disk,
+                hard photons from the innermost region of the disk.
+                Now let's go to the data. Here the shape of the power 
+                in the soft and hard energy band is very similar. This means 
+                that every ring contribute in the same way to the variability 
+                in the soft and hard band. In order to reproduce this situation,
+                what does our fitting algorith do? It adjust the emissivities 
+                of the two energy bands so that each ring will provide the 
+                same contribution to the variability in the soft and hard band.
+                But if the two emissivities, in the hard and soft band,
+                are almost identical, this means that, even if fluctuations 
+                propagate in the disk and flow, I would see a very small 
+                lag because my two energy bands are targeting the same 
+                geometrical region and not to disk regions that are far 
+                apart from each other.
+                Indeed the phase lags in this fits are very low.
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability case 2</h3>
+                Few days later the situation did not get better, this time
+                the model failed also to predict the shape of the power in the 
+                hard band, where we observed a low frequency sholder. This 
+                is again very at odd with model predictions as we would expect 
+                extra variability at high frequency.</br>
+                In this work we showed that using the simple recipe of fluctuations
+                propagating in a disk + innerflow geometry, you may find quantitative
+                and, especially, qualitative between data and model that 
+                may require more elaborate physical scenarios to be explained.
+                One of the good outcomes of our approach is that it quickly
+                stimulated other works on this case. 
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability Veledina</h3>
+                One year later, Alexandra Veledina used the propagating 
+                fluctuation hypothesis with a different geometry. In this case 
+                inner part of the accretion disk extend within the inner 
+                boundary of the hot flow. the propagating fluctuations cause 
+                variation of the disk seed photons, and so the Compton upscattered 
+                photons in the flow, but also variations in the flow density.
+                This last variations are transferred into variation of the 
+                Compton upscatted synchrotron emission coming from the hot 
+                flow itself. Because these two emission interfere with 
+                each other, the resulting power spectrum may present a shape
+                that deviates from the smooth single hump of our model.
+                Time or phase lags arise because disc Comptonization 
+                happens usually before the synchrotron comptonization.
+                Using this scenarion Alexandra obained a good agreement 
+                between data in our second case and model predictions. 
+                Furthermore, the interference between these two emissions 
+                could also explain the deviations from the linear-RMS 
+                relation often observed during intermediate states. 
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability Mushtukov</h3>
+                An other interesting study about propagating fluctuations 
+                is the work of Alexander Mushtukov together with Adam 
+                Ingram and Michiel van der Klis. If you remember the 
+                animation I showed you when talking about diffusion in the 
+                disk, you may have noticed that the ring spred in the disk
+                not only towards the black hole, but also outwords. This 
+                effect is not contemplated in the simple scenario I described 
+                before, but Alexander used a more rigourous treatment 
+                of the diffusion equations making predictions from mass accretion 
+                rate fluctuations propagating both towards the black hole 
+                and away from it. One of the most interesting result is the 
+                predictions of soft lags. This suggest a scenario where soft 
+                lags could be the result not only of reverbaration but also 
+                backword propagation.
+            </li>
+            <li>
+                <h3>Modelling BH-XRB variability Kawamura</h3>
+                The last example I am going to show you is also the latest 
+                application of mass accretion rate to data. I am not going 
+                spoil the results, as Tenyo kawamura talk is just in few minutes,
+                but this time they assumed a geometry considering a truncated 
+                Shakura sunyaev accretion disk and a stratified hot flow,
+                i.e. an hot flow made of two regions characterized by 
+                different emissivity and viscosity properties and they also 
+                considered reverberation in their study. They qualitatively
+                compared model predictions with NICER data and Tenyo will 
+                tell you everything about that.
+            </li>
+            <li>
+                <h3>Wrapping up: where are we?</h3>
+                So, what this introduction and these case of study tell us?
+                Where are we? Well, we saw that in the last ten years the 
+                propagating fluctuations hypothesis is been applied in 
+                different flavours, so using different geometries, to data
+                with <em>fluctuating results</em>. We are still far from 
+                statistically good fit of the availavle information, but 
+                due to the particularly complex nature of this information,
+                what it has been done is already remarkable. The point I want 
+                to stress here is that we are reaching the point that 
+                propagating fluctuation models can be implemented in geometrical 
+                scenarios matching the results from spectral analysis. This means 
+                that is already possible to use result from spectral analysis 
+                to model the stochastic variability, or at least trying to model it.
+                Furthermore, the assumption about the fluctuations, their 
+                power spectrum, their amplitude, the viscous frequency profile, etc are also 
+                quite natural outcomes of MHD simulations or can be linked 
+                to the magnetic field configuration in the disk (as turbolence 
+                and viscosity are supposed to depend also on the magnetic field),
+                so the application of these models can also help us to 
+                discern between different hypotheses.
+            </li>
+            <li>
+                <h3>Wrapping up: where are we going?</h3>
+                When talking about future developments I see three different paths:
+                The first one is the hardcore application of model implementations 
+                to data. As I said, the hypothesis can now be combined with 
+                several geometrical configurations, but application on data 
+                has been scarse compared to the amount of available data. 
+                NICER is now providing very high signal to noise data, but it 
+                is also true that its band is limited to the low energies, 
+                and propagating fluctuation models should be test on broad 
+                energy ranges. So, first path, more data.</br>
+                The second path is building on what we have, exploring more 
+                geometries, making tighter matches between spectral models 
+                and propagating fluctuation models, creating a sort of 
+                propagating fluctuations lab, where we can explore in great 
+                detail propagating fluctuation model predictions in different 
+                geometrical scenarios, so to also be able to select the 
+                most interesting cases of study.</br>
+                The third path is the one if the fundamental assumptions.
+                As I mentioned, the idea of propagating fluctuations is quite 
+                simple, but to make the machine work you need all sort of assumptions 
+                related to how the fluctuations propagate in the accretion flow 
+                and how the different parts of the accretion flow talk to each 
+                other. What happens when you consider vairiability in reprocessing 
+                and reflection? If the inner flow is really precessing 
+                producing the QPO, how does this could affect the propagating 
+                fluctuations? This kind of research does not necesseraly implies 
+                the direct application of propagating fluctuation models,
+                but it would be of great help for its future applications.
+            </li>
+            <li>
+                <h3>Wrapping up: shall we go after all?</h3>
+                This was a queastion people asked me several times and we 
+                also discussed in my group. We found several cases where 
+                the propagating fluctuation model simply does not work, with 
+                undeniable qualitative and quantitative descrepancies 
+                between model and the data. Doesn't this mean that the hypothesis 
+                has been falsified? Well there are two things to consider: 
+                propagating fluctuations models are not simple models, 
+                they do not make simple prediction such us the swan being black or white. 
+                As I showed you, propagating 
+                fluctuations models are complex machines made of many 
+                assumptions aport from the simple idea of propagating fluctuations.
+                It also true that the implementations are described are 
+                semi-phenomenological models, they are simplifications of
+                more complex mechanism that would need simulations, but that 
+                we use because it is not convenient to run a month simulation 
+                to fit an observation of 10 minutes. 
+                The second point is that it may happen that propagating fluctuations 
+                contribute but they are not totally responsible for what we observe. There are 
+                study showing that in particular situations, like dipping sources 
+                or high winds, both the power spectral shape and the lag spectrum
+                can be altered, in those cases becames difficult to find out what 
+                contributes to what. This is something we would know extensively applying 
+                these models to modre data. In my opinion the 
+                hypothesis has not being yet falsified, we basically just started 
+                to systematically applying these models to data, and we can 
+                still learn a lot trying to model the variability in this way.
+                So, shall we go after all? If you are payed for that, why not!
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Removed slides</h2>
+        <ul>
+            <li>
+                <h3>Implementing the model: diffusion</h3>
+                Let's consider a ring with high density material around
+                a black hole. In this case the ring of material is a 50 
+                gravitational radii. Because of diffusion this ring will 
+                spread in an accretion disk, and if we are close to the black hole
+                we will observe local density variations, due to the spread 
+                of this outer ring, after a characteristic time called 
+                viscous time scale. This is simply a result of the diffusion 
+                equation. Now the interesting thing is that, because of this 
+                diffusion process, every variation with time scale shorter 
+                than the viscous time scale, is highly suppressed.
+                Let me show you this with a more specific example.
+            </li>
+
+            <li>
+                <h3>Implementing the model: damping</h3>
+                Let's consider an accretion disk and let's assume to trigger 
+                mass accretion rate fluctuations with a very specific wave form 
+                far from the black hole, at 50 graviational radii, as indicated 
+                by the green arrow. What we want to do is to observe the 
+                density fluctuations due to diffusion close to the black hole.
+                We decide to give our fluctuations a very specific wave pattern
+                made of three sinusoud with three different periods. 
+                the first one has a period of half the local viscous frequency,
+                the other two have period respectively five and ten time higher than
+                the local viscous frequency. Well, what we will observe close 
+                to the black hole is that not only the fluctuations are damped,
+                as you can see looking at the scale of these plots, but also
+                the variability components with period shorter than the local 
+                viscous time scale baiscally disappeared. This means that 
+                because of diffusion, the propagating fluctuation mechanism
+                in the disk works like a low band filter, suppressing All
+                the variability with time scale shorter than the local viscous 
+                time scale. 
+                This is a very important fact when implementing mass accretion 
+                rate fluctuation models and it will also make our life much 
+                easier as I will show you in the next slide.
+            </li>
+            <li>
+                <h3>Modelling the variability:spectral assumptions</h3>
+                As I said before, any spectral study must always consider 
+                the information coming from short time scale variability and
+                vice versa. The propagating fluctuations model parameters 
+                can also be constrained according to spectral analysis.
+                I indentified three different approaches that have been use,
+                the easiest one is just considering a very general match 
+                between the propagating fluctuation region and the current 
+                energy spectrum or accretion state. For example in the low 
+                hard state would make sense to consider exploratively a 
+                truncated disk geometry or fluctuations propagating only, 
+                in the hot flow. The next step is not only to make this 
+                assumption, but also measuring the radio between different 
+                energy bands in the energy spectrum and setting the emissivities 
+                in the disk according to such ratio. In other work, when we model 
+                the variability we take into account that the average 
+                flux in different energy bands must corresponds to what 
+                observed in the energy spectrum, and that is what we have 
+                done in our papers together with adam and michiel. The hardest 
+                approach is to make a one to one match of spectral components 
+                with the propagating fluctuations region and also trying 
+                to fit the two information simultaneously, this is something 
+                that, for example, rahad Mamoud and Chris Done have tried 
+                in their papres in 2018 and 2019. Needless to say, that 
+                models that care less of spectral information can be fine 
+                tuned to achieve a good agreement with the data, but of course 
+                you should always aim to use all the available information.
+            </li>
+            <li>
+                Indeed there may be agreement about the geomtry of accretion 
+                in the high-soft state, but when we start talking about 
+                low hard state and all sort of intermediate states, spectral 
+                analysis can lead to contradictory results.</br>
+                <br>
+                I always like to mention this very nice study of Javier 
+                Garcia on XTE J1752-223 because they basically obtained 
+                probably the highest signal to noise energy spectrum 
+                ever computed in the low hard state and they could describe
+                the data equally well with two quite different geometrical 
+                configuration. It is clear that any additional information
+                able to break this degeneracy becomes fundamental.   
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

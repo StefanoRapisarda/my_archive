@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>About Sphinx</h1>
+    <section>
+        <h2>What I've learned from the first website page</h2>
+        <ul>
+            <li>Sphinx was originally created for python documentation;</li>
+            <li>The output formats include PDF, latex, and epub among others. 
+                Apparently you can even write a book with Sphinx (check Packt);
+            </li>
+            <li>It uses reStructuredText, a markup language;</li>
+            <li>You can use it with many themes like alabaster, classic,
+                nature (pandas, cython, PyWavelets), etc; </li>
+            <li>Read the Docs is not a competitor of sphinx as I thought,
+                but rather a place to host your documentation for free;
+            </li>
+        </ul>
+    </section>
+    <section>
+    <h2>From getting started</h2>
+        <ul>
+            <li><span style="color:blue">DEF:</span> Sphinx is a <em>
+                documentation generator</em>, i.e. a tool that translates a 
+            set of plain text source files into various outout formats;</li>
+        </ul>
+    </section>
+    <section>
+        <h2>First steps</h2>
+        <ul>
+            <li>
+                Install sphinx with <code>python -m pip install sphinx</code>;
+            </li>
+            <li>
+                Verify sphinx installation with <code>sphinx-build --version</code>;
+            </li>
+            <li>
+                From the command line, inside your selected folder, run
+                <code>sphinx-quickstart docs</code>. This will ask you a series
+                of questions (answer yes to the first one) and will create a 
+                new docs folder. Inside this folder, in particular, you will
+                find that the <code>source/index.rst</code> file is the root document of
+                the project, which serves as welcome page and contains root
+                of the "table of contents tree" (toctree);
+            </li>
+            <li>
+                To export your documentation in html (or any other format)
+                run the command <code>sphinx.build -b html docs/source/ docs/build/html</code>. 
+                After this first build, when you modify the .rst file you can 
+                simply run <code>make html</code> inside the docs folder;
+            </li>
+            
+        </ul>
+    </section>
+    <section>
+        <h2>Resources</h2>
+        <ul>
+            <li>
+                <a href="https://brendanhasz.github.io/2019/01/05/sphinx.html#:~:text=Sphinx%20is%20a%20tool%20to,hosts%20your%20documentation%20for%20free.">Guide</a> by Brendan Haz;
+            </li>
+        </ul>
+    </section>
+    
+</body>
+</html>

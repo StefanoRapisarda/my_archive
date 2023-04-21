@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Consultant</title>
+</head>
+<body>
+    <h1>Research Data Consultant (Data Steward) at Utrecht University</h1>
+
+    <section>
+        <h2>Preparing the first interview</h2>
+
+        <h3>Possible questions</h3>
+        <h4>Technical</h4>
+        <ul>
+            <li>
+                <div class="question">
+                    <u>
+                        <em>You implemented solutions for a broad variety of data related problems, could you give us some examples?</em>
+                    </u>
+                <div class="answer">
+                    <p>
+                        <strong>GUIDELINE:</strong> talk about your experience with data reduction from satellites;
+                    </p>
+                    <p>
+                        I always worked with data from satellites. These data are usually publicly available online. The data 
+                        are organised according to target, the source that the satellite observes, and observations, a continous
+                        interval of time that the satellite spent observing that target.
+                    </p>
+                    <p>
+                        Therefore, these data have to be first downloaded and stored locally. Each satellite has different 
+                        characteristics, for example some orbit quite far from Earth while another, in particular, is attached
+                        to the international space station. So, according to the satellite, data have to be cleaned and filtered.
+                    </p>
+                    <p>
+                        Then data need to be reduced into a higher level data, the ones that it's actually needed to perform
+                        research, and analysed. Usually I perform a preliminary analysis to check if something interesting 
+                        showing up and also a deeper statistical analysis on specic cases. For both these phases visualization
+                        is fundamental as well.
+                    </p>
+                    <p>
+                        So for broad variety of problems I mean indeed downloading, storing, cleaning, filtering, reducing, 
+                        analysing and creating higher level data, designing a format for this high level data, designing their 
+                        corresponding meta_data, and quickly visualising these data as well in different formats (an interactive
+                        plot, a pdf etc.)
+                    </p>
+                    <p>
+                        In terms of structure also it is necessary to find the most simple storing structures for a certain 
+                        data set;
+                    </p>
+                </div>
+            </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>How do you deal with large databases?</em>
+                </div>
+                <div class="answer">
+                    <p>
+                        This of course depends on a specific case, but in general I would try to access first how big or
+                        how big is going to be the dataset, the kind of data to be stored (tables, images, etc), and some other
+                        information about accessing the data, for example how many times the data need to be accessed during
+                        the research project, which kind of speed is required, and which kind of analysis will be perfomed and 
+                        how.
+                    </p>
+                    <p>
+                        The next step would be trying to find optimal solutions for these database characteristics, always 
+                        keeping an eye at the cost of these characteristics, and then presenting and explaining pro and cons of
+                        these solutions to the researcher.
+                    </p>
+                    <p>
+                        From a more technical point of view, I would suggest to make a copy of the raw data, so that the 
+                        original raw data cannot be manipulated directly. It is also important to keep track of all the operations
+                        perfomed on raw data, this can be done via metadata or using version control software for files. The 
+                        principle is the same of git but these work for files, Zenodo and Dat are possible technologies.
+                    </p>
+                    <p>
+                        Creating optimal metadata is very also important, when writing metadata I always think them as messages 
+                        for my future self and my future self is a dumper and slower version of my present self and he forgot
+                        everything about the database, so it has to be information structured in a way to be easely interpreted 
+                        without previous knowledge of the dataset structure.
+                    </p>
+                    <p>
+                        Every analysis also should be done in a self contained computing environment (using docker container or
+                        any kind of virtual environment for example) in a way that not only you can reproduce the same result 
+                        using the same software, but also, eventually, figuring out the cause of possible errors and mistakes.
+                    </p>
+                </div>
+                <div class="concepts">
+                    <strong>Useful concepts:</strong>
+                    <ul>
+                        <li>
+                            <strong style="color:blue">Table normalization</strong>: Normalization is the process of 
+                            organizing data in a database. This includes creating tables and establishing relationships between 
+                            those tables according to rules designed both to protect the data and to make the database more 
+                            flexible by eliminating redundancy and inconsistent dependency;
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <li>
+                <div class="question">
+                    <em>How did you make your data FAIR?</em>
+                </div>
+                <div class="answer">
+                    <p>
+                        I try to be sure that the raw data used for my research project are publicly available and I give detailed description
+                        on which dataset has been used. I also make detailed documentation of all the operations perfomed on data and I make
+                        available on internet the higher level data produced and the software that has been used;
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>How do you keep yourself updated?</em>
+                </div>
+                <div>
+                    <p>
+                        I am subscribed to several newsletter reguarding data science, software developement, and in general the 
+                        tech world. For example TLDR and pycoder weekly are among my favourite. I like TLDR because it organises articles in
+                        terms of the time you are supposed to spend to read it. I am also memeber of facebook groups related to 
+                        the data science world and I can follow up the news from there. I also follow website like kaggle, medium.com, 
+                        and towardsdatascience.com.
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Have you ever written a data management plan? Can you descrive an effective data management plan?</em>
+                </div>
+                <div>
+                    <p>
+                        I would first check if there is a data management plan tool made by the institution I am working in or
+                        I am applying fundings for.
+                    </p>
+                    <p>
+                        Said that, I would try to specify the following information:
+                        <h5>Project, experiment, and data description</h5>
+                        <ul>
+                            <li>Purpose of research;</li>
+                            <li>type of data;</li>
+                            <li>how much data will be generated in this research;</li>
+                            <li>how long will the data be collected and how often will it change;</li>
+                            <li>if the researcher will use data collected from someone else;</li>
+                            <li>who is responsible for managing the data.</li>
+                        </ul>
+                        <h5>Documentation, organization, and storage</h5>
+                        <ul>
+                            <li>
+                                what documentation will be created in order to make the data understandable by other 
+                                researchers;
+                            </li>
+                            <li>
+                                Use of metadata, checking if there is a standard in the field and how metadata will be stored;
+                            </li>
+                            <li>
+                                file formats to be used;
+                            </li>
+                            <li>
+                                naming conventions;
+                            </li>
+                            <li>
+                                local storagen and backup procedures;
+                            </li>
+                            <li>
+                                tools and software required to read and visualise data.
+                            </li>
+                        </ul>
+                        <h5>Access, sharing, and re-use</h5>
+                        <ul>
+                            <li>
+                                who has the right to manage the data;
+                            </li>
+                            <li>
+                                what data will be shared, when, and how?
+                            </li>
+                            <li>
+                                if data sharing raises privacy, ethical, or confidentiality concerns?
+                            </li>
+                            <li>
+                                who holds intellectual property rights for the data;
+                            </li>
+                            <li>
+                                if there is any patent or technology-licensing-related restrinctions on data;
+                            </li>
+                            <li>
+                                if the research will be published;
+                            </li>
+                            <li>
+                                possible embargoes on data;
+                            </li>
+                            <li>
+                                permission to re-use data and tools.
+                            </li>
+                        </ul>
+                        <h5>Archiving</h5>
+                        <ul>
+                            <li>the way data will be archived and for how long;</li>
+                            <li>preparing data for preservation and sharing;</li>
+                            <li>if software is needed to use the data, specify hot it is going to be archived;</li>
+                            <li>data retaining time.</li>
+                        </ul>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Which kind of technical advice did you give to students and biology researchers?</em>
+                </div>
+                <div class="answer">
+                    <p>
+                        I gave both research and technical advice. On the technical advice I alway tried to
+                        understand first which kind of data they were going to handle and if they were going
+                        to collect the data theirself or if they were going to use data from other people.
+                        Then I tried to provide different solutions discussion pro and cons. 
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Can you share an effective approach for dealing with large amount of data?</em>
+                </div>
+                <div class="answer">
+                    <p>
+                        In few words:
+                        <ul>
+                            <li>
+                                create a structure for the research data. This includes being able to access the data in a readable format;
+                            </li>
+                            <li>always make a backup of your raw data;</li>
+                            <li>
+                                try to plan ahead figuring out future size, data type
+                                and use of your database;
+                            </li>
+                            <li>
+                                run any operation in a virtual environment so that in ten years it will be 
+                                possible to perform the same operations in the same conditions of today;
+                            </li>
+                            <li>
+                                track any performed operations with detailed metadata and version control systems;
+                            </li>
+                            <li>
+                                if not necessary, perform operations on cloud, do not download the data;
+                            </li>
+                        </ul> 
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Provide an example of a time when you had to present complex data in a way that was easy to understand.</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What would you do if you discovered an error in the data you were analyzing?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Do you have any experience with confidential data?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What's in your opinion the most important benefit of a DMP? Why researchers should make a DMP?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What is in your opinion the most difficoult part of dealing with big data?</em>
+                </div>
+                <div class="Answer">
+                    <p>
+                        Thinking long-term, in particular estimating future size and use of a database. Database can grow very 
+                        complex with time and with the rapid change of technology, designing database effective solutions that can 
+                        last over time is, in my opinion, the greatest challenge;
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="Question">
+                    <em>What is in your opinion the worst thing that can happen in data management?</em>
+                </div>
+                <div class="Answer">
+                    <p>
+                        Data corruption or damage that goes under the radar and it is not noticed by the researcher. That would 
+                        mean that scientific results will be based on false evidence and that is worse than loosing completely
+                        the data;
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Attitude</h4>
+        <ul>
+            <li>
+                <div class="question">
+                    <em>What are some of the most important qualities for a data manager?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Provide an example of a time when you had to use your critical thinking skills to solve a problem.</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>If hired, what would be your priorities as a data consultant?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What makes you stand out from other candidates for this job?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What is the most important thing you can do for researchers?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>How well do you think you can work independently as a data consultant?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>When working with clients, what is your approach for explaining complex concepts related to data?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What do you think is the most importnat thing for a data consultant to remember whtn working on a 
+                        team project?
+                    </em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Which data formats have you experience with?</em>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Career</h4>
+        <ul>
+            <li>
+                <div class="question">
+                    <em>Why do you want to move from research to data management?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>What challenges are you looking for in this data consultant position?</em>
+                </div>
+            </li>
+            <li>
+                <div class="question">
+                    <em>Where do you see yourself in five years?</em>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <secion>
+        <h2>Questions for the recruiters</h2>
+        <ul>
+            <li>How is your data management team organised?</li>
+            <li>What is your typical working week? For example, what did you do last week?</li>
+            <li>
+                How do you deal with research requests? For example, if a researcher as a problem, is this shared with all 
+                the team or it is assigned to a single data consultant?
+            </li>
+            <li>
+                So you give help to researchers on request, do you also check out about their work to get insights on how they are 
+                dealing with their specific projects?
+            </li>
+            <li>
+                I've seen in your website that you provide services such us workshops, guide videos, and tailered advices: how all
+                these services are assigned among the team members?
+            </li>
+            <li>
+                What are the actual boundaries of this position? Do you provide advice or you work also on the implementation of
+                the solution?
+            </li>
+            <li>
+                Did you ever experienced conflicts with researchers?
+            </li>
+        </ul>
+    </secion>
+    
+</body>
+</html>

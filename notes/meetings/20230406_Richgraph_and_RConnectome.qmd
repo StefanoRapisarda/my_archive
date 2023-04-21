@@ -1,0 +1,40 @@
+---
+title: "Meeting with Rik Janssen on Richgraph and RConnectome"
+format: html
+theme: sketchy
+toc: true
+toc_depth: 2
+editor: visual
+author: Stefano Rapisarda
+participants: Stefano Rapisarda, Rik Janssen
+topic: Introduction, Richgraph, RConnectome
+keywords: Noede, RichGraph, Metadata, Researchers Connectome project, FAIR research software
+date: 2023-04-06
+---
+
+## Motivation
+
+The meeting follows a presentation made by Erik on the 30th of March 2023 (Demonstratielunch Ricgraph - Research in context graph). The presentation was in dutch, but the slides were in English. The language did not matter much in that context as graphs are all about graphics. Rik presented a software (Ricgraph) to store, access, and visualize information related to researchers working at the Utrecht University (and, maybe, beyond). I've been always interested on graphs both because of my taking note application and the more recent concept of a Researchers Connectome, so I decided to meet Rik in person to know a bit more (in English) about his work.
+
+## What we discussed
+
+- I asked Rik about **his position at the University**. Like in many other cases it is not very well defined. He mentioned he does a job that
+sounds very similar to what Research Software Engineers do. According to his personal page he is a Business analyst and a Consultant
+ICT, but, again, it seems that here what you are supposed to do does not always collide with what you do at the end of the day;
+- I asked Rik **how the all graph project started** and he mentioned the FAIR Research IT program at the UU. There is a lot of documentation about this FAIR Research IT program but it's mainly in Dutch (thing that I find no much FAIR). Anyhow, it seems that
+Ricgraph is (or it is considered) an outcome of this program born by the personal initiative of Rik. Rik told me that he was frustrated by continuous discussions on clustering research IDs at Surf and at the faculty, so that he decided to make an implementation. He used graphs and and several databases, including the UU researcher database, Pure data, ORCID, and ... (he mentioned something else, but I guess I can find information on the website);
+- I asked him about the **algorithm** that allows to find the shortest path between two nodes, but he himself did not know. It seems he used a python packages, or an "engine" (whatever it may mean in this context) for the graph database and adopted the algorithm in there. I repeated to him the objections I heard at the Software Engineer table about the research speed compared to normal table data, but he was pretty sure that even without knowing the initial node, the graph database would be still faster. He also mentioned that this may change at a certain point depending on the number of nodes;
+- We discussed about the information visualized by Ricgraph, he said that the main problem is when people mislabel information or have, for example, two ORCID accounts. In that case he decided to throw away the nodes, but that in principle you can keep all the information and write an algorithm to identify the "ourliers". In other words, Ricgraph works with the big assumption that scientists have a unique identifier, they correctly put all their scientific products online, and they did not mislabel info;
+- Rik then asked me about why was I interested in Ricgraph and I went on describing the concept of Researchers Connectome;
+
+## Meeting outcome(s)
+
+- The first outcomes is that the idea of the Connectome is not a bad idea (unless he just pretended to be nice). He mentioned that the first problem would be how to extract the "skill" information. Where should I start this information from? I proporsed, naivey, with a campaign, but he said that basically that could never happen. Then from where? Personal pages of the researchers? Another solution would be accessing via Ricgraph the DOIs associated with the researchers, reading information or meta data from these products and trying to extract the skills. About extracting this information from metadata, he mentioned to talk to Otto;
+- Another thing it came out is that, in order to be really useful, the ORCID account doen't need to be only created, but also USED. Only in this way algorithms can trace or reconstruct the scientific production of a researcher and creating those nice visualizations. For example he mentioned that one of the main problem is mislabeling in YODA, people just misspelling their identifier in YODA;
+
+### TODO:
+- [ ] Talk to Jonathan about the project;
+- [ ] Make your profile page public;
+- [ ] Play a bit with Ricgraph;
+- [ ] Fix another appointment with Otto;
+- [ ] Ask Jonathan about the FAIR Research IT program and what's the difference with the FAIR program he is in; 

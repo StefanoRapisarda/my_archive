@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022 Mar 22</title>
+</head>
+<body>
+    <div class="Python Coding GoodPractices Lists Tuples">
+        <h1>Lists or Tuples?</h1>
+        <p>
+            The weekly email pointed at an article on medium that I could
+            not read because my subscription had expired... anyhow. <br>
+            I googled a bit to refresh the main concepts and:
+        </p>
+        <ul>
+            <li>
+                Tuples are immutable, lists are not, therefore tuples 
+                have fixed length and can be used as dictionary index;
+            </li>
+            <li>
+                Tuples are stored more efficiently, so for large number
+                of items can be read faster than lists and occupy less 
+                space <span class=""Python Coding Methods">(you can 
+                    check the space occupied in bytes by an object either 
+                    with the method __sizeof__() or with the function 
+                    sys.getsizeof())</span>;
+            </li>
+            <li>
+                Tuples give the programmer and the interpreter a hint
+                that the data should not be changed;
+            </li>
+        </ul>
+        Information found mainly <a href="https://www.programiz.com/python-programming/list-vs-tuples#:~:text=The%20literal%20syntax%20of%20tuples,more%20functionality%20than%20the%20tuple.">here</a>.
+    </div>
+    <div class="Python Coding GoodPractices PEP">
+        <h1>Abount PEP</h1>
+        <p>
+            <span style="color:blue">DEF:</span> PEPs are documents 
+            that propose new Python features and serve as official
+            documentation for the feature while the Python community
+            debates its acceptance or rejection. PEP stands for Python
+            Enhancement Proposal;
+        </p>
+        <p>
+            Among all PEPs, PEP8 is Python's official style guide. Some 
+            of the "rules" in PEP8 are: 
+        </p>
+        <ul>
+            <li>Use four spaces instead of a tab character for indentation;</li>
+            <li>The maximum line length is 79 characters;</li>
+            <li>Functions and variable names should follow the
+                <code>lowercase_with_underscores</code> style;
+            </li>
+            <li>Class names should use the <code>CapitalizeWords</code>
+            style;</li>
+            <li>
+                Write constants in the <code>UPPER_CASE_WITH_UNDERSCORE</code>
+                style;
+            </li>
+        </ul>
+        <p>There are tools to check if you are "respecting" the rules:</p>
+        <ul>
+            <li>flake8: install it with <scan>pip install flake8</scan>
+            and run it with <code>flake8 myscript.py</code>;</li>
+            <li>You can set VS Code to lint your code with flake8;</li>
+            <li>
+                <code>black</code> is an auto-formatter that you can install
+                with <code>pip install black</code>. <code>black --check myscript.py</code>
+                will check your script to see if there is any change to do.
+                <code>black --diff myscript.py</code> is to check which
+                changes black would make. <code>black myscript.py</code> will
+                automatically format the file.
+            </li>
+        </ul>
+    </div>
+    <div class="Python Coding GoodPractices">
+        <h1>Making your code more "Pythonic"</h1>
+        <p>
+            Apart from following PEP8 for your formatting, there are few
+            things to remember to make your python code more efficient:
+        </p>
+        <ul>
+            <li>
+                Instead of iterating over an index, try to iterate over
+                items in a list (or anything iterable) directly;
+            </li>
+            <li>
+                Use list comprehension when possible (I never noticed 
+                that list comprehension syntax is very symilar to the 
+                <a href=https://en.wikipedia.org/wiki/Set-builder_notation">set-builder notation</a>)
+                for writing sets ("insiemi") in mathematics);
+            </li>
+            <li>
+                Use built-in functions when possible. A good example is 
+                finding the amount of words starting with A in a list:
+                <code>sum([item.startswith("A") for item in items])</code>;
+            </li>
+            <li>
+                Remember that in python True and False are 1 and 0 in 
+                disguise;
+            </li>
+            <li>
+                Remember you can also write dictionary comprehensions
+                list list comprehensions;
+            </li>
+            <li>
+                Use sets to remove duplicates from a list: <code>
+                    unique_items = list(set(items))
+                </code>.<br>
+                Sets can also be used to get differences between two...
+                sets of items;
+            </li>
+
+        </ul>
+    </div>
+</body>
+</html>
